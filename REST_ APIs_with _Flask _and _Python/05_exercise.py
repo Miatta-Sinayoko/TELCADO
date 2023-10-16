@@ -1,33 +1,35 @@
-l = ["Bob", "Rolf", "Anne"]
-t = ("Bob", "Rolf", "Anne")
-s = {"Bob", "Rolf", "Anne"}
+# Lists, Tuples, and Sets containing names.
+names_list = ["Bob", "Rolf", "Anne"]
+names_tuple = ("Bob", "Rolf", "Anne")
+names_set = {"Bob", "Rolf", "Anne"}
 
-# Access individual items in lists and tuples using the index.
+# Accessing individual items in lists and tuples by their position.
+print(names_list[0])
+print(names_tuple[0])
 
-print(l[0])
-print(t[0])
-# print(s[0])  # This gives an error because sets are unordered, so accessing element 0 of something without order doesn't make sense.
+# Sets don't support positional access as they are unordered.
+# print(names_set[0])  # This would result in an error due to the lack of ordering in sets.
 
-# Modify individual items in lists using the index.
+# Modifying individual items in lists using their index.
+names_list[0] = "Smith"
 
-l[0] = "Smith"
-# t[0] = "Smith"  # This gives an error because tuples are "immutable".
+# Tuples are "immutable," so trying to change an element will result in an error.
+# names_tuple[0] = "Smith"
 
-print(l)
-print(t)
+print(names_list)
+print(names_tuple)
 
-# Add to a list by using `.append`
+# Adding a new name to a list using `.append`.
+names_list.append("Jen")
+print(names_list)
 
-l.append("Jen")
-print(l)
-# Tuples cannot be appended to because they are immutable.
+# Tuples cannot be modified after creation, so appending is not possible.
+# Tuples are "immutable."
 
-# Add to sets by using `.add`
+# Adding a new name to a set using `.add`.
+names_set.add("Jen")
+print(names_set)
 
-s.add("Jen")
-print(s)
-
-# Sets can't have the same element twice.
-
-s.add("Bob")
-print(s)
+# Sets automatically handle unique elements, so adding "Bob" again won't change the set.
+names_set.add("Bob")
+print(names_set)
